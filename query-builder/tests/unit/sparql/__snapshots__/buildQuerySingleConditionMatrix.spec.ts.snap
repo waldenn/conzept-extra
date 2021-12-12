@@ -1,0 +1,1972 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "less-than", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+  FILTER(?numericQuantity < \\"3.2\\"^^xsd:decimal)
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "less-than", "referenceRelation": "with", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+  FILTER(?numericQuantity < \\"3.2\\"^^xsd:decimal)
+  FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "less-than", "referenceRelation": "without", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+  FILTER(?numericQuantity < \\"3.2\\"^^xsd:decimal)
+  FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+  FILTER(?numericQuantity = \\"3.2\\"^^xsd:decimal)
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  BIND(\\"3.2\\"^^xsd:decimal AS ?userQuantity)
+  BIND(wd:Q9000 AS ?userUnit)
+  ?userUnit (p:P2370/psv:P2370/wikibase:quantityAmount) ?conversionFactor;
+    (p:P2370/psv:P2370/wikibase:quantityUnit) ?coherentUnit.
+  BIND(?userQuantity * ?conversionFactor AS ?coherentUserQuantity)
+  ?item p:P123 ?statement0.
+  ?statement0 (psn:P123/wikibase:quantityAmount) ?statementQuantity;
+    (psn:P123/wikibase:quantityUnit) ?coherentUnit.
+  FILTER(?statementQuantity = ?coherentUserQuantity)
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "with", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+  FILTER(?numericQuantity = \\"3.2\\"^^xsd:decimal)
+  FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "with", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  BIND(\\"3.2\\"^^xsd:decimal AS ?userQuantity)
+  BIND(wd:Q9000 AS ?userUnit)
+  ?userUnit (p:P2370/psv:P2370/wikibase:quantityAmount) ?conversionFactor;
+    (p:P2370/psv:P2370/wikibase:quantityUnit) ?coherentUnit.
+  BIND(?userQuantity * ?conversionFactor AS ?coherentUserQuantity)
+  ?item p:P123 ?statement0.
+  ?statement0 (psn:P123/wikibase:quantityAmount) ?statementQuantity;
+    (psn:P123/wikibase:quantityUnit) ?coherentUnit.
+  FILTER(?statementQuantity = ?coherentUserQuantity)
+  FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "without", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+  FILTER(?numericQuantity = \\"3.2\\"^^xsd:decimal)
+  FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "without", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  BIND(\\"3.2\\"^^xsd:decimal AS ?userQuantity)
+  BIND(wd:Q9000 AS ?userUnit)
+  ?userUnit (p:P2370/psv:P2370/wikibase:quantityAmount) ?conversionFactor;
+    (p:P2370/psv:P2370/wikibase:quantityUnit) ?coherentUnit.
+  BIND(?userQuantity * ?conversionFactor AS ?coherentUserQuantity)
+  ?item p:P123 ?statement0.
+  ?statement0 (psn:P123/wikibase:quantityAmount) ?statementQuantity;
+    (psn:P123/wikibase:quantityUnit) ?coherentUnit.
+  FILTER(?statementQuantity = ?coherentUserQuantity)
+  FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "more-than", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+  FILTER(?numericQuantity > \\"3.2\\"^^xsd:decimal)
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "more-than", "referenceRelation": "with", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+  FILTER(?numericQuantity > \\"3.2\\"^^xsd:decimal)
+  FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "more-than", "referenceRelation": "without", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+  FILTER(?numericQuantity > \\"3.2\\"^^xsd:decimal)
+  FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "regardless", "subclasses": false, "value": ""} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "with", "subclasses": false, "value": ""} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+  FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "with", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+  FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "with", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+  FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "without", "subclasses": false, "value": ""} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+  FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "without", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+  FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "without", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+  FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+  FILTER(?numericQuantity != \\"3.2\\"^^xsd:decimal)
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  BIND(\\"3.2\\"^^xsd:decimal AS ?userQuantity)
+  BIND(wd:Q9000 AS ?userUnit)
+  ?userUnit (p:P2370/psv:P2370/wikibase:quantityAmount) ?conversionFactor;
+    (p:P2370/psv:P2370/wikibase:quantityUnit) ?coherentUnit.
+  BIND(?userQuantity * ?conversionFactor AS ?coherentUserQuantity)
+  ?item p:P123 ?statement0.
+  ?statement0 (psn:P123/wikibase:quantityAmount) ?statementQuantity;
+    (psn:P123/wikibase:quantityUnit) ?coherentUnit.
+  FILTER(?statementQuantity != ?coherentUserQuantity)
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "with", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+  FILTER(?numericQuantity != \\"3.2\\"^^xsd:decimal)
+  FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "with", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  BIND(\\"3.2\\"^^xsd:decimal AS ?userQuantity)
+  BIND(wd:Q9000 AS ?userUnit)
+  ?userUnit (p:P2370/psv:P2370/wikibase:quantityAmount) ?conversionFactor;
+    (p:P2370/psv:P2370/wikibase:quantityUnit) ?coherentUnit.
+  BIND(?userQuantity * ?conversionFactor AS ?coherentUserQuantity)
+  ?item p:P123 ?statement0.
+  ?statement0 (psn:P123/wikibase:quantityAmount) ?statementQuantity;
+    (psn:P123/wikibase:quantityUnit) ?coherentUnit.
+  FILTER(?statementQuantity != ?coherentUserQuantity)
+  FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "without", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+  FILTER(?numericQuantity != \\"3.2\\"^^xsd:decimal)
+  FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": false, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "without", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  BIND(\\"3.2\\"^^xsd:decimal AS ?userQuantity)
+  BIND(wd:Q9000 AS ?userUnit)
+  ?userUnit (p:P2370/psv:P2370/wikibase:quantityAmount) ?conversionFactor;
+    (p:P2370/psv:P2370/wikibase:quantityUnit) ?coherentUnit.
+  BIND(?userQuantity * ?conversionFactor AS ?coherentUserQuantity)
+  ?item p:P123 ?statement0.
+  ?statement0 (psn:P123/wikibase:quantityAmount) ?statementQuantity;
+    (psn:P123/wikibase:quantityUnit) ?coherentUnit.
+  FILTER(?statementQuantity != ?coherentUserQuantity)
+  FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "less-than", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+    FILTER(?numericQuantity < \\"3.2\\"^^xsd:decimal)
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "less-than", "referenceRelation": "with", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+    FILTER(?numericQuantity < \\"3.2\\"^^xsd:decimal)
+    FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "less-than", "referenceRelation": "without", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+    FILTER(?numericQuantity < \\"3.2\\"^^xsd:decimal)
+    FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+    FILTER(?numericQuantity = \\"3.2\\"^^xsd:decimal)
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    BIND(\\"3.2\\"^^xsd:decimal AS ?userQuantity)
+    BIND(wd:Q9000 AS ?userUnit)
+    ?userUnit (p:P2370/psv:P2370/wikibase:quantityAmount) ?conversionFactor;
+      (p:P2370/psv:P2370/wikibase:quantityUnit) ?coherentUnit.
+    BIND(?userQuantity * ?conversionFactor AS ?coherentUserQuantity)
+    ?item p:P123 ?statement0.
+    ?statement0 (psn:P123/wikibase:quantityAmount) ?statementQuantity;
+      (psn:P123/wikibase:quantityUnit) ?coherentUnit.
+    FILTER(?statementQuantity = ?coherentUserQuantity)
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "with", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+    FILTER(?numericQuantity = \\"3.2\\"^^xsd:decimal)
+    FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "with", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    BIND(\\"3.2\\"^^xsd:decimal AS ?userQuantity)
+    BIND(wd:Q9000 AS ?userUnit)
+    ?userUnit (p:P2370/psv:P2370/wikibase:quantityAmount) ?conversionFactor;
+      (p:P2370/psv:P2370/wikibase:quantityUnit) ?coherentUnit.
+    BIND(?userQuantity * ?conversionFactor AS ?coherentUserQuantity)
+    ?item p:P123 ?statement0.
+    ?statement0 (psn:P123/wikibase:quantityAmount) ?statementQuantity;
+      (psn:P123/wikibase:quantityUnit) ?coherentUnit.
+    FILTER(?statementQuantity = ?coherentUserQuantity)
+    FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "without", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+    FILTER(?numericQuantity = \\"3.2\\"^^xsd:decimal)
+    FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "without", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    BIND(\\"3.2\\"^^xsd:decimal AS ?userQuantity)
+    BIND(wd:Q9000 AS ?userUnit)
+    ?userUnit (p:P2370/psv:P2370/wikibase:quantityAmount) ?conversionFactor;
+      (p:P2370/psv:P2370/wikibase:quantityUnit) ?coherentUnit.
+    BIND(?userQuantity * ?conversionFactor AS ?coherentUserQuantity)
+    ?item p:P123 ?statement0.
+    ?statement0 (psn:P123/wikibase:quantityAmount) ?statementQuantity;
+      (psn:P123/wikibase:quantityUnit) ?coherentUnit.
+    FILTER(?statementQuantity = ?coherentUserQuantity)
+    FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "more-than", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+    FILTER(?numericQuantity > \\"3.2\\"^^xsd:decimal)
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "more-than", "referenceRelation": "with", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+    FILTER(?numericQuantity > \\"3.2\\"^^xsd:decimal)
+    FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "more-than", "referenceRelation": "without", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+    FILTER(?numericQuantity > \\"3.2\\"^^xsd:decimal)
+    FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "regardless", "subclasses": false, "value": ""} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "with", "subclasses": false, "value": ""} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+    FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "with", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+    FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "with", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+    FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "without", "subclasses": false, "value": ""} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+    FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "without", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+    FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "without", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+    FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+    FILTER(?numericQuantity != \\"3.2\\"^^xsd:decimal)
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    BIND(\\"3.2\\"^^xsd:decimal AS ?userQuantity)
+    BIND(wd:Q9000 AS ?userUnit)
+    ?userUnit (p:P2370/psv:P2370/wikibase:quantityAmount) ?conversionFactor;
+      (p:P2370/psv:P2370/wikibase:quantityUnit) ?coherentUnit.
+    BIND(?userQuantity * ?conversionFactor AS ?coherentUserQuantity)
+    ?item p:P123 ?statement0.
+    ?statement0 (psn:P123/wikibase:quantityAmount) ?statementQuantity;
+      (psn:P123/wikibase:quantityUnit) ?coherentUnit.
+    FILTER(?statementQuantity != ?coherentUserQuantity)
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "with", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+    FILTER(?numericQuantity != \\"3.2\\"^^xsd:decimal)
+    FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "with", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    BIND(\\"3.2\\"^^xsd:decimal AS ?userQuantity)
+    BIND(wd:Q9000 AS ?userUnit)
+    ?userUnit (p:P2370/psv:P2370/wikibase:quantityAmount) ?conversionFactor;
+      (p:P2370/psv:P2370/wikibase:quantityUnit) ?coherentUnit.
+    BIND(?userQuantity * ?conversionFactor AS ?coherentUserQuantity)
+    ?item p:P123 ?statement0.
+    ?statement0 (psn:P123/wikibase:quantityAmount) ?statementQuantity;
+      (psn:P123/wikibase:quantityUnit) ?coherentUnit.
+    FILTER(?statementQuantity != ?coherentUserQuantity)
+    FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "without", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (psv:P123/wikibase:quantityAmount) ?numericQuantity.
+    FILTER(?numericQuantity != \\"3.2\\"^^xsd:decimal)
+    FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "quantity", "negate": true, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "without", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    BIND(\\"3.2\\"^^xsd:decimal AS ?userQuantity)
+    BIND(wd:Q9000 AS ?userUnit)
+    ?userUnit (p:P2370/psv:P2370/wikibase:quantityAmount) ?conversionFactor;
+      (p:P2370/psv:P2370/wikibase:quantityUnit) ?coherentUnit.
+    BIND(?userQuantity * ?conversionFactor AS ?coherentUserQuantity)
+    ?item p:P123 ?statement0.
+    ?statement0 (psn:P123/wikibase:quantityAmount) ?statementQuantity;
+      (psn:P123/wikibase:quantityUnit) ?coherentUnit.
+    FILTER(?statementQuantity != ?coherentUserQuantity)
+    FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "string", "negate": false, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "regardless", "subclasses": false, "value": "a string value"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (ps:P123) \\"a string value\\".
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "string", "negate": false, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "with", "subclasses": false, "value": "a string value"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123) \\"a string value\\".
+    FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "string", "negate": false, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "without", "subclasses": false, "value": "a string value"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123) \\"a string value\\".
+    FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "string", "negate": false, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "regardless", "subclasses": false, "value": "a string value"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (ps:P123) _:anyValueP123.
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "string", "negate": false, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "with", "subclasses": false, "value": "a string value"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123) _:anyValueP123.
+    FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "string", "negate": false, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "without", "subclasses": false, "value": "a string value"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123) _:anyValueP123.
+    FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "string", "negate": false, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "regardless", "subclasses": false, "value": "a string value"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (ps:P123) ?instance.
+  MINUS { ?item (p:P123/ps:P123) \\"a string value\\". }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "string", "negate": false, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "with", "subclasses": false, "value": "a string value"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123) ?instance.
+    FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+  MINUS { ?item (p:P123/ps:P123) \\"a string value\\". }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "string", "negate": false, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "without", "subclasses": false, "value": "a string value"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123) ?instance.
+    FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+  MINUS { ?item (p:P123/ps:P123) \\"a string value\\". }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "string", "negate": true, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "regardless", "subclasses": false, "value": "a string value"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123) \\"a string value\\".
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "string", "negate": true, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "with", "subclasses": false, "value": "a string value"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P123 ?statement0.
+      ?statement0 (ps:P123) \\"a string value\\".
+      FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "string", "negate": true, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "without", "subclasses": false, "value": "a string value"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P123 ?statement0.
+      ?statement0 (ps:P123) \\"a string value\\".
+      FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "string", "negate": true, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "regardless", "subclasses": false, "value": "a string value"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123) _:anyValueP123.
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "string", "negate": true, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "with", "subclasses": false, "value": "a string value"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P123 ?statement0.
+      ?statement0 (ps:P123) _:anyValueP123.
+      FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "string", "negate": true, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "without", "subclasses": false, "value": "a string value"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P123 ?statement0.
+      ?statement0 (ps:P123) _:anyValueP123.
+      FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "string", "negate": true, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "regardless", "subclasses": false, "value": "a string value"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123) ?instance.
+  }
+  MINUS { ?item (p:P123/ps:P123) \\"a string value\\". }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "string", "negate": true, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "with", "subclasses": false, "value": "a string value"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P123 ?statement0.
+      ?statement0 (ps:P123) ?instance.
+      FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+  MINUS { ?item (p:P123/ps:P123) \\"a string value\\". }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "string", "negate": true, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "without", "subclasses": false, "value": "a string value"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P123 ?statement0.
+      ?statement0 (ps:P123) ?instance.
+      FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+  MINUS { ?item (p:P123/ps:P123) \\"a string value\\". }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "less-than", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P585 ?statement_0.
+  ?statement_0 psv:P585 ?statementValue_0.
+  ?statementValue_0 wikibase:timePrecision ?precision_0.
+  FILTER(?precision_0 >= 11 )
+  ?statementValue_0 wikibase:timeValue ?P585_0.
+  FILTER(?P585_0 < \\"+2021-01-20T00:00:00Z\\"^^xsd:dateTime)
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "less-than", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P585 ?statement_0.
+  ?statement_0 psv:P585 ?statementValue_0.
+  ?statementValue_0 wikibase:timePrecision ?precision_0.
+  FILTER(?precision_0 >= 11 )
+  ?statementValue_0 wikibase:timeValue ?P585_0.
+  FILTER(?P585_0 < \\"+2021-00-00T00:00:00Z\\"^^xsd:dateTime)
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "less-than", "referenceRelation": "with", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timePrecision ?precision_0.
+    FILTER(?precision_0 >= 11 )
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    FILTER(?P585_0 < \\"+2021-01-20T00:00:00Z\\"^^xsd:dateTime)
+    FILTER(EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "less-than", "referenceRelation": "with", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timePrecision ?precision_0.
+    FILTER(?precision_0 >= 11 )
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    FILTER(?P585_0 < \\"+2021-00-00T00:00:00Z\\"^^xsd:dateTime)
+    FILTER(EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "less-than", "referenceRelation": "without", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timePrecision ?precision_0.
+    FILTER(?precision_0 >= 11 )
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    FILTER(?P585_0 < \\"+2021-01-20T00:00:00Z\\"^^xsd:dateTime)
+    FILTER(NOT EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "less-than", "referenceRelation": "without", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timePrecision ?precision_0.
+    FILTER(?precision_0 >= 11 )
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    FILTER(?P585_0 < \\"+2021-00-00T00:00:00Z\\"^^xsd:dateTime)
+    FILTER(NOT EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "matching", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P585 ?statement_0.
+  ?statement_0 psv:P585 ?statementValue_0.
+  ?statementValue_0 wikibase:timePrecision ?precision_0.
+  FILTER(?precision_0 >= 11 )
+  ?statementValue_0 wikibase:timeValue ?P585_0.
+  BIND(\\"+2021-01-20T00:00:00Z\\"^^xsd:dateTime AS ?P585_0)
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "matching", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P585 ?statement_0.
+  ?statement_0 psv:P585 ?statementValue_0.
+  ?statementValue_0 wikibase:timePrecision ?precision_0.
+  hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+  FILTER(?precision_0 >= 10 )
+  ?statementValue_0 wikibase:timeValue ?P585_0.
+  hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+  FILTER((\\"+2020-12-00T00:00:00Z\\"^^xsd:dateTime <= ?P585_0) && (?P585_0 < \\"+2021-01-00T00:00:00Z\\"^^xsd:dateTime))
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "matching", "referenceRelation": "with", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timePrecision ?precision_0.
+    FILTER(?precision_0 >= 11 )
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    BIND(\\"+2021-01-20T00:00:00Z\\"^^xsd:dateTime AS ?P585_0)
+    FILTER(EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "matching", "referenceRelation": "with", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timePrecision ?precision_0.
+    hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+    FILTER(?precision_0 >= 10 )
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+    FILTER((\\"+2020-12-00T00:00:00Z\\"^^xsd:dateTime <= ?P585_0) && (?P585_0 < \\"+2021-01-00T00:00:00Z\\"^^xsd:dateTime))
+    FILTER(EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "matching", "referenceRelation": "without", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timePrecision ?precision_0.
+    FILTER(?precision_0 >= 11 )
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    BIND(\\"+2021-01-20T00:00:00Z\\"^^xsd:dateTime AS ?P585_0)
+    FILTER(NOT EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "matching", "referenceRelation": "without", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timePrecision ?precision_0.
+    hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+    FILTER(?precision_0 >= 10 )
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+    FILTER((\\"+2020-12-00T00:00:00Z\\"^^xsd:dateTime <= ?P585_0) && (?P585_0 < \\"+2021-01-00T00:00:00Z\\"^^xsd:dateTime))
+    FILTER(NOT EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "more-than", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P585 ?statement_0.
+  ?statement_0 psv:P585 ?statementValue_0.
+  ?statementValue_0 wikibase:timePrecision ?precision_0.
+  hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+  FILTER(?precision_0 >= 10 )
+  ?statementValue_0 wikibase:timeValue ?P585_0.
+  hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+  FILTER(?P585_0 >= \\"+2021-01-00T00:00:00Z\\"^^xsd:dateTime)
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "more-than", "referenceRelation": "with", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timePrecision ?precision_0.
+    hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+    FILTER(?precision_0 >= 10 )
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+    FILTER(?P585_0 >= \\"+2021-01-00T00:00:00Z\\"^^xsd:dateTime)
+    FILTER(EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "more-than", "referenceRelation": "without", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timePrecision ?precision_0.
+    hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+    FILTER(?precision_0 >= 10 )
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+    FILTER(?P585_0 >= \\"+2021-01-00T00:00:00Z\\"^^xsd:dateTime)
+    FILTER(NOT EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "regardless-of-value", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P585 ?statement_0.
+  ?statement_0 psv:P585 ?statementValue_0.
+  ?statementValue_0 wikibase:timeValue ?P585_0.
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "regardless-of-value", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P585 ?statement_0.
+  ?statement_0 psv:P585 ?statementValue_0.
+  ?statementValue_0 wikibase:timeValue ?P585_0.
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "regardless-of-value", "referenceRelation": "with", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    FILTER(EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "regardless-of-value", "referenceRelation": "with", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    FILTER(EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "regardless-of-value", "referenceRelation": "without", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    FILTER(NOT EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "regardless-of-value", "referenceRelation": "without", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    FILTER(NOT EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "without", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P585 ?statement_0.
+  ?statement_0 psv:P585 ?statementValue_0.
+  ?statementValue_0 wikibase:timePrecision ?precision_0.
+  FILTER(?precision_0 >= 11 )
+  ?statementValue_0 wikibase:timeValue ?P585_0.
+  FILTER(?P585_0 != \\"+2021-01-20T00:00:00Z\\"^^xsd:dateTime)
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "without", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P585 ?statement_0.
+  ?statement_0 psv:P585 ?statementValue_0.
+  ?statementValue_0 wikibase:timePrecision ?precision_0.
+  hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+  FILTER(?precision_0 >= 10 )
+  ?statementValue_0 wikibase:timeValue ?P585_0.
+  hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+  FILTER((\\"+2020-12-00T00:00:00Z\\"^^xsd:dateTime < ?P585_0) || (?P585_0 >= \\"+2021-01-00T00:00:00Z\\"^^xsd:dateTime))
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "without", "referenceRelation": "with", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timePrecision ?precision_0.
+    FILTER(?precision_0 >= 11 )
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    FILTER(?P585_0 != \\"+2021-01-20T00:00:00Z\\"^^xsd:dateTime)
+    FILTER(EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "without", "referenceRelation": "with", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timePrecision ?precision_0.
+    hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+    FILTER(?precision_0 >= 10 )
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+    FILTER((\\"+2020-12-00T00:00:00Z\\"^^xsd:dateTime < ?P585_0) || (?P585_0 >= \\"+2021-01-00T00:00:00Z\\"^^xsd:dateTime))
+    FILTER(EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "without", "referenceRelation": "without", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timePrecision ?precision_0.
+    FILTER(?precision_0 >= 11 )
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    FILTER(?P585_0 != \\"+2021-01-20T00:00:00Z\\"^^xsd:dateTime)
+    FILTER(NOT EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": false, "propertyId": "P585", "propertyValueRelation": "without", "referenceRelation": "without", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timePrecision ?precision_0.
+    hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+    FILTER(?precision_0 >= 10 )
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+    FILTER((\\"+2020-12-00T00:00:00Z\\"^^xsd:dateTime < ?P585_0) || (?P585_0 >= \\"+2021-01-00T00:00:00Z\\"^^xsd:dateTime))
+    FILTER(NOT EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "less-than", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timePrecision ?precision_0.
+    FILTER(?precision_0 >= 11 )
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    FILTER(?P585_0 < \\"+2021-01-20T00:00:00Z\\"^^xsd:dateTime)
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "less-than", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timePrecision ?precision_0.
+    FILTER(?precision_0 >= 11 )
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    FILTER(?P585_0 < \\"+2021-00-00T00:00:00Z\\"^^xsd:dateTime)
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "less-than", "referenceRelation": "with", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P585 ?statement_0.
+      ?statement_0 psv:P585 ?statementValue_0.
+      ?statementValue_0 wikibase:timePrecision ?precision_0.
+      FILTER(?precision_0 >= 11 )
+      ?statementValue_0 wikibase:timeValue ?P585_0.
+      FILTER(?P585_0 < \\"+2021-01-20T00:00:00Z\\"^^xsd:dateTime)
+      FILTER(EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "less-than", "referenceRelation": "with", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P585 ?statement_0.
+      ?statement_0 psv:P585 ?statementValue_0.
+      ?statementValue_0 wikibase:timePrecision ?precision_0.
+      FILTER(?precision_0 >= 11 )
+      ?statementValue_0 wikibase:timeValue ?P585_0.
+      FILTER(?P585_0 < \\"+2021-00-00T00:00:00Z\\"^^xsd:dateTime)
+      FILTER(EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "less-than", "referenceRelation": "without", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P585 ?statement_0.
+      ?statement_0 psv:P585 ?statementValue_0.
+      ?statementValue_0 wikibase:timePrecision ?precision_0.
+      FILTER(?precision_0 >= 11 )
+      ?statementValue_0 wikibase:timeValue ?P585_0.
+      FILTER(?P585_0 < \\"+2021-01-20T00:00:00Z\\"^^xsd:dateTime)
+      FILTER(NOT EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "less-than", "referenceRelation": "without", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P585 ?statement_0.
+      ?statement_0 psv:P585 ?statementValue_0.
+      ?statementValue_0 wikibase:timePrecision ?precision_0.
+      FILTER(?precision_0 >= 11 )
+      ?statementValue_0 wikibase:timeValue ?P585_0.
+      FILTER(?P585_0 < \\"+2021-00-00T00:00:00Z\\"^^xsd:dateTime)
+      FILTER(NOT EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "matching", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timePrecision ?precision_0.
+    FILTER(?precision_0 >= 11 )
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    BIND(\\"+2021-01-20T00:00:00Z\\"^^xsd:dateTime AS ?P585_0)
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "matching", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timePrecision ?precision_0.
+    hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+    FILTER(?precision_0 >= 10 )
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+    FILTER((\\"+2020-12-00T00:00:00Z\\"^^xsd:dateTime <= ?P585_0) && (?P585_0 < \\"+2021-01-00T00:00:00Z\\"^^xsd:dateTime))
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "matching", "referenceRelation": "with", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P585 ?statement_0.
+      ?statement_0 psv:P585 ?statementValue_0.
+      ?statementValue_0 wikibase:timePrecision ?precision_0.
+      FILTER(?precision_0 >= 11 )
+      ?statementValue_0 wikibase:timeValue ?P585_0.
+      BIND(\\"+2021-01-20T00:00:00Z\\"^^xsd:dateTime AS ?P585_0)
+      FILTER(EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "matching", "referenceRelation": "with", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P585 ?statement_0.
+      ?statement_0 psv:P585 ?statementValue_0.
+      ?statementValue_0 wikibase:timePrecision ?precision_0.
+      hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+      FILTER(?precision_0 >= 10 )
+      ?statementValue_0 wikibase:timeValue ?P585_0.
+      hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+      FILTER((\\"+2020-12-00T00:00:00Z\\"^^xsd:dateTime <= ?P585_0) && (?P585_0 < \\"+2021-01-00T00:00:00Z\\"^^xsd:dateTime))
+      FILTER(EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "matching", "referenceRelation": "without", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P585 ?statement_0.
+      ?statement_0 psv:P585 ?statementValue_0.
+      ?statementValue_0 wikibase:timePrecision ?precision_0.
+      FILTER(?precision_0 >= 11 )
+      ?statementValue_0 wikibase:timeValue ?P585_0.
+      BIND(\\"+2021-01-20T00:00:00Z\\"^^xsd:dateTime AS ?P585_0)
+      FILTER(NOT EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "matching", "referenceRelation": "without", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P585 ?statement_0.
+      ?statement_0 psv:P585 ?statementValue_0.
+      ?statementValue_0 wikibase:timePrecision ?precision_0.
+      hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+      FILTER(?precision_0 >= 10 )
+      ?statementValue_0 wikibase:timeValue ?P585_0.
+      hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+      FILTER((\\"+2020-12-00T00:00:00Z\\"^^xsd:dateTime <= ?P585_0) && (?P585_0 < \\"+2021-01-00T00:00:00Z\\"^^xsd:dateTime))
+      FILTER(NOT EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "more-than", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timePrecision ?precision_0.
+    hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+    FILTER(?precision_0 >= 10 )
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+    FILTER(?P585_0 >= \\"+2021-01-00T00:00:00Z\\"^^xsd:dateTime)
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "more-than", "referenceRelation": "with", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P585 ?statement_0.
+      ?statement_0 psv:P585 ?statementValue_0.
+      ?statementValue_0 wikibase:timePrecision ?precision_0.
+      hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+      FILTER(?precision_0 >= 10 )
+      ?statementValue_0 wikibase:timeValue ?P585_0.
+      hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+      FILTER(?P585_0 >= \\"+2021-01-00T00:00:00Z\\"^^xsd:dateTime)
+      FILTER(EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "more-than", "referenceRelation": "without", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P585 ?statement_0.
+      ?statement_0 psv:P585 ?statementValue_0.
+      ?statementValue_0 wikibase:timePrecision ?precision_0.
+      hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+      FILTER(?precision_0 >= 10 )
+      ?statementValue_0 wikibase:timeValue ?P585_0.
+      hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+      FILTER(?P585_0 >= \\"+2021-01-00T00:00:00Z\\"^^xsd:dateTime)
+      FILTER(NOT EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "regardless-of-value", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "regardless-of-value", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "regardless-of-value", "referenceRelation": "with", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P585 ?statement_0.
+      ?statement_0 psv:P585 ?statementValue_0.
+      ?statementValue_0 wikibase:timeValue ?P585_0.
+      FILTER(EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "regardless-of-value", "referenceRelation": "with", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P585 ?statement_0.
+      ?statement_0 psv:P585 ?statementValue_0.
+      ?statementValue_0 wikibase:timeValue ?P585_0.
+      FILTER(EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "regardless-of-value", "referenceRelation": "without", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P585 ?statement_0.
+      ?statement_0 psv:P585 ?statementValue_0.
+      ?statementValue_0 wikibase:timeValue ?P585_0.
+      FILTER(NOT EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "regardless-of-value", "referenceRelation": "without", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P585 ?statement_0.
+      ?statement_0 psv:P585 ?statementValue_0.
+      ?statementValue_0 wikibase:timeValue ?P585_0.
+      FILTER(NOT EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "without", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timePrecision ?precision_0.
+    FILTER(?precision_0 >= 11 )
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    FILTER(?P585_0 != \\"+2021-01-20T00:00:00Z\\"^^xsd:dateTime)
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "without", "referenceRelation": "regardless", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P585 ?statement_0.
+    ?statement_0 psv:P585 ?statementValue_0.
+    ?statementValue_0 wikibase:timePrecision ?precision_0.
+    hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+    FILTER(?precision_0 >= 10 )
+    ?statementValue_0 wikibase:timeValue ?P585_0.
+    hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+    FILTER((\\"+2020-12-00T00:00:00Z\\"^^xsd:dateTime < ?P585_0) || (?P585_0 >= \\"+2021-01-00T00:00:00Z\\"^^xsd:dateTime))
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "without", "referenceRelation": "with", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P585 ?statement_0.
+      ?statement_0 psv:P585 ?statementValue_0.
+      ?statementValue_0 wikibase:timePrecision ?precision_0.
+      FILTER(?precision_0 >= 11 )
+      ?statementValue_0 wikibase:timeValue ?P585_0.
+      FILTER(?P585_0 != \\"+2021-01-20T00:00:00Z\\"^^xsd:dateTime)
+      FILTER(EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "without", "referenceRelation": "with", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P585 ?statement_0.
+      ?statement_0 psv:P585 ?statementValue_0.
+      ?statementValue_0 wikibase:timePrecision ?precision_0.
+      hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+      FILTER(?precision_0 >= 10 )
+      ?statementValue_0 wikibase:timeValue ?P585_0.
+      hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+      FILTER((\\"+2020-12-00T00:00:00Z\\"^^xsd:dateTime < ?P585_0) || (?P585_0 >= \\"+2021-01-00T00:00:00Z\\"^^xsd:dateTime))
+      FILTER(EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "without", "referenceRelation": "without", "subclasses": false, "value": [Object]} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P585 ?statement_0.
+      ?statement_0 psv:P585 ?statementValue_0.
+      ?statementValue_0 wikibase:timePrecision ?precision_0.
+      FILTER(?precision_0 >= 11 )
+      ?statementValue_0 wikibase:timeValue ?P585_0.
+      FILTER(?P585_0 != \\"+2021-01-20T00:00:00Z\\"^^xsd:dateTime)
+      FILTER(NOT EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "time", "negate": true, "propertyId": "P585", "propertyValueRelation": "without", "referenceRelation": "without", "subclasses": false, "value": [Object]} 2`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P585 ?statement_0.
+      ?statement_0 psv:P585 ?statementValue_0.
+      ?statementValue_0 wikibase:timePrecision ?precision_0.
+      hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+      FILTER(?precision_0 >= 10 )
+      ?statementValue_0 wikibase:timeValue ?P585_0.
+      hint:Prior hint:rangeSafe \\"true\\"^^xsd:boolean.
+      FILTER((\\"+2020-12-00T00:00:00Z\\"^^xsd:dateTime < ?P585_0) || (?P585_0 >= \\"+2021-01-00T00:00:00Z\\"^^xsd:dateTime))
+      FILTER(NOT EXISTS { ?statement_0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": false, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "regardless", "subclasses": false, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (ps:P123) wd:Q123.
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": false, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "regardless", "subclasses": true, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (ps:P123/(wdt:P279*)) wd:Q123.
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": false, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "with", "subclasses": false, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123) wd:Q123.
+    FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": false, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "with", "subclasses": true, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123/(wdt:P279*)) wd:Q123.
+    FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": false, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "without", "subclasses": false, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123) wd:Q123.
+    FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": false, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "without", "subclasses": true, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123/(wdt:P279*)) wd:Q123.
+    FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": false, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "regardless", "subclasses": false, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (ps:P123) _:anyValueP123.
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": false, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "regardless", "subclasses": true, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (ps:P123/(wdt:P279*)) _:anyValueP123.
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": false, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "with", "subclasses": false, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123) _:anyValueP123.
+    FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": false, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "with", "subclasses": true, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123/(wdt:P279*)) _:anyValueP123.
+    FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": false, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "without", "subclasses": false, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123) _:anyValueP123.
+    FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": false, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "without", "subclasses": true, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123/(wdt:P279*)) _:anyValueP123.
+    FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": false, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "regardless", "subclasses": false, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (ps:P123) ?instance.
+  MINUS { ?item (p:P123/ps:P123) wd:Q123. }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": false, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "regardless", "subclasses": true, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item p:P123 ?statement0.
+  ?statement0 (ps:P123/(wdt:P279*)) ?instance.
+  MINUS { ?item (p:P123/ps:P123) wd:Q123. }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": false, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "with", "subclasses": false, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123) ?instance.
+    FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+  MINUS { ?item (p:P123/ps:P123) wd:Q123. }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": false, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "with", "subclasses": true, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123/(wdt:P279*)) ?instance.
+    FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+  MINUS { ?item (p:P123/ps:P123) wd:Q123. }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": false, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "without", "subclasses": false, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123) ?instance.
+    FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+  MINUS { ?item (p:P123/ps:P123) wd:Q123. }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": false, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "without", "subclasses": true, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123/(wdt:P279*)) ?instance.
+    FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+  }
+  MINUS { ?item (p:P123/ps:P123) wd:Q123. }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": true, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "regardless", "subclasses": false, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123) wd:Q123.
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": true, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "regardless", "subclasses": true, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123/(wdt:P279*)) wd:Q123.
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": true, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "with", "subclasses": false, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P123 ?statement0.
+      ?statement0 (ps:P123) wd:Q123.
+      FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": true, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "with", "subclasses": true, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P123 ?statement0.
+      ?statement0 (ps:P123/(wdt:P279*)) wd:Q123.
+      FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": true, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "without", "subclasses": false, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P123 ?statement0.
+      ?statement0 (ps:P123) wd:Q123.
+      FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": true, "propertyId": "P123", "propertyValueRelation": "matching", "referenceRelation": "without", "subclasses": true, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P123 ?statement0.
+      ?statement0 (ps:P123/(wdt:P279*)) wd:Q123.
+      FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": true, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "regardless", "subclasses": false, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123) _:anyValueP123.
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": true, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "regardless", "subclasses": true, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123/(wdt:P279*)) _:anyValueP123.
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": true, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "with", "subclasses": false, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P123 ?statement0.
+      ?statement0 (ps:P123) _:anyValueP123.
+      FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": true, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "with", "subclasses": true, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P123 ?statement0.
+      ?statement0 (ps:P123/(wdt:P279*)) _:anyValueP123.
+      FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": true, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "without", "subclasses": false, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P123 ?statement0.
+      ?statement0 (ps:P123) _:anyValueP123.
+      FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": true, "propertyId": "P123", "propertyValueRelation": "regardless-of-value", "referenceRelation": "without", "subclasses": true, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P123 ?statement0.
+      ?statement0 (ps:P123/(wdt:P279*)) _:anyValueP123.
+      FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": true, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "regardless", "subclasses": false, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123) ?instance.
+  }
+  MINUS { ?item (p:P123/ps:P123) wd:Q123. }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": true, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "regardless", "subclasses": true, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    ?item p:P123 ?statement0.
+    ?statement0 (ps:P123/(wdt:P279*)) ?instance.
+  }
+  MINUS { ?item (p:P123/ps:P123) wd:Q123. }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": true, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "with", "subclasses": false, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P123 ?statement0.
+      ?statement0 (ps:P123) ?instance.
+      FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+  MINUS { ?item (p:P123/ps:P123) wd:Q123. }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": true, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "with", "subclasses": true, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P123 ?statement0.
+      ?statement0 (ps:P123/(wdt:P279*)) ?instance.
+      FILTER(EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+  MINUS { ?item (p:P123/ps:P123) wd:Q123. }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": true, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "without", "subclasses": false, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P123 ?statement0.
+      ?statement0 (ps:P123) ?instance.
+      FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+  MINUS { ?item (p:P123/ps:P123) wd:Q123. }
+}"
+`;
+
+exports[`buildQuery builds a query from a single condition QueryRepresentation: {"conditionRelation": null, "datatype": "wikibase-item", "negate": true, "propertyId": "P123", "propertyValueRelation": "without", "referenceRelation": "without", "subclasses": true, "value": "Q123"} 1`] = `
+"SELECT DISTINCT ?item WHERE {
+  ?item wikibase:sitelinks _:anyValue.
+  MINUS {
+    {
+      ?item p:P123 ?statement0.
+      ?statement0 (ps:P123/(wdt:P279*)) ?instance.
+      FILTER(NOT EXISTS { ?statement0 prov:wasDerivedFrom ?reference. })
+    }
+  }
+  MINUS { ?item (p:P123/ps:P123) wd:Q123. }
+}"
+`;

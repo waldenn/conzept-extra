@@ -1,0 +1,407 @@
+@import '~antd/dist/antd.css';
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,b3d4fc+100,207cca+100 */
+
+
+html, body root, .taviewer {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+.taviewer {
+  font-family: Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+}
+.taviewer .ant-collapse {
+  font-family: Helvetica, Arial, sans-serif;
+
+}
+
+.taviewer-detail {
+  display: none !important;
+}
+
+.taviewer-detail-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.taviewer-title h1, h2 {
+  font-weight: 600;
+  margin-bottom: 0px;
+  color: #0000004d;
+  padding-top: 1px;
+}
+
+.taviewer-complete {
+  width: 100%;
+}
+
+.taviewer-topheader {
+  display: flex;
+  flex-direction: row; 
+}
+
+  .taviewer-header {
+    width: 100%;
+    padding-bottom: 8px;
+    padding-top: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* border-bottom: 1px solid #dddddd; */
+  }
+
+  .taviewer-tree {
+    padding: 10px;
+    flex: 1;
+    overflow: auto;
+  }
+
+@media (max-width: 660px) {
+  .taviewer-menubar {
+    padding-right: 10px;
+    flex: 1 1 600px;
+    flex-flow: row wrap;
+  }
+
+  .taviewer-search-spacer {
+    display: none;
+  }
+  .taviewer-search {
+    flex: 1 100%;
+    order: 5;
+    padding-left: 10px;
+    padding-right: 0px;
+    padding-top: 5px;
+  }
+  .taviewer-header {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .taviewer-title {
+    flex: 1 0 140px;
+    padding-top: 0px;
+    padding-left: 10px;
+    align-self: flex-start;
+  
+
+  }
+  .taviewer-title h1 {
+    font-size: 20px;
+    padding-bottom: 0px;
+  }
+  .taviewer-controls {
+    flex: 1.5;
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .taviewer-detail {
+    overflow-y: hidden !important;
+    padding: 0px;
+    padding-bottom: 4px;
+    padding-left: 20px;
+    flex: 0.2;
+    border-bottom: 1px solid #dddddd;
+    order: -1;
+  }
+  .taviewer-detail h2 {
+    font-size: 16px;
+    padding-bottom: 0px;
+    margin-bottom: 5px;
+  }
+  .taviewer-main {
+    display: flex;
+    padding-top: 3px;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+  }
+}
+
+@media (min-width: 659px) {
+  .taviewer {
+    position: fixed;
+    overflow-y: hidden !important;
+  }
+
+  .taviewer-menubar {
+    padding-right: 20px;
+  }
+  .taviewer-title {
+    flex: 0 0 200px;
+    margin-top:-5px;
+    padding-left: 15px;
+  }
+
+  .taviewer-menubar-controls {
+    padding-top: 0px;
+  }
+  .taviewer-controls {
+    flex: 1.5;
+    padding-top: 8px;
+    padding-left: 20px;
+    padding-right: 30px;
+  }
+
+}
+
+.taviewer-main {
+  display: flex;
+  padding-top: 3px;
+	flex-direction: row;
+  flex: 1;
+  min-height: 0;
+}
+
+.taviewer-detail {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: hidden !important;
+
+  /*
+  padding: 5px;
+  padding-left: 15px;
+  */
+  flex: 1.5;
+  border-left: 1px solid #dddddd;
+}
+
+.taviewer-tree {
+  -webkit-overflow-scrolling: touch;
+}
+
+.taviewer-search {
+  flex: 1;
+}
+
+.taviewer-search .ant-select {
+  width: 100%;
+}
+
+/*
+.taviewer-main >* {
+  border: 1px solid red;  
+  }
+  */
+
+.taviewer-detail-row {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.taviewer-detail-key {
+  font-style: oblique;
+
+  flex: 0 0 140px;
+  text-align: left;
+  font-weight: normal;
+  padding-right: 10px;
+  color: #000000;
+}
+
+.taviewer-detail-value {
+  flex: 1;
+  padding-right: 20px;
+  color: #000000;
+}
+
+.taviewer-detail-value  a:link,
+.taviewer-detail-value a:visited,
+.taviewer-detail-value a:hover,
+.taviewer-detail-value a:active {
+  text-decoration: none;
+}
+
+
+.taviewer-detail-key-nested {
+  font-style: oblique;
+  flex: 0 0 120px; 
+  text-align: left;
+  font-weight: normal;
+  padding-right: 0px;
+  color: #000000;
+}
+
+/*
+.taviewer-detail >* {
+  border: 1px solid blue;  
+  }
+*/
+
+.taviewer .ant-tree li {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+body {
+  color: rgb(0, 0, 0);
+  line-height: initial !important;
+}
+
+.taviewer .ant-tree-title {
+  font-size: 13px;
+  color: rgb(41, 41, 41);
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.ant-select-dropdown-menu-item {
+  color: rgb(0, 0, 0);
+}
+.ant-input {
+  color: rgb(0, 0, 0);
+
+}
+
+.taviewer-group {
+  font-weight: 700;
+}
+
+.taviewer-group .ant-tree-title {
+  color: rgb(40, 40, 40);
+}
+.taviewer-leaf .ant-tree-title {
+  font-weight: normal;
+  color: rgb(0, 0, 0);
+
+}
+
+.ant-tree li ul {
+  padding-left: 25px;
+}
+
+.ant-carousel .slick-slide {
+  text-align: center;
+  line-height: 160px;
+  overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}
+.taviewer-detail .ant-carousel .slick-slide {
+  padding-bottom: 20px;
+
+}
+.taviewer-detail .ant-carousel .slick-slide button {
+  background-color: #00f;
+
+}
+
+#lightboxBackdrop {
+  background: rgb(200, 200, 200);
+}
+
+.taviewer .ant-collapse > .ant-collapse-item > .ant-collapse-header .arrow {
+  top: -11px;
+  left: 0px;
+}
+
+.taviewer .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 15px;
+  font-weight: bold;
+  color: rgb(75, 75, 75);
+}
+.taviewer .ant-collapse-borderless > 
+  .ant-collapse-item > 
+  .ant-collapse-content > 
+  .ant-collapse-content-box {
+    padding-bottom: 8px;
+}
+
+.taviewer .ant-collapse-content {
+  padding-left: 0px;
+}
+
+.taviewer .ant-collapse > .ant-collapse-item {
+  border: 0px solid black;
+}
+/*
+.taviewer .ant-collapse-borderless > .ant-collapse-item {
+  border-bottom: 0px solid #d9d9d9;
+}
+*/
+
+.taviewer-lightbox .ril-inner {
+  background-color: white;
+}
+
+.taviewer-menubar {
+  display: flex;
+  flex-direction: row;
+  padding-top: 8px;
+  padding-bottom: 0px;
+  justify-content: flex-end;
+  flex: 1.5;
+}
+.taviewer-menubar a {
+  padding-left: 18px;
+  padding-right: 18px;
+  text-decoration: none;
+  font-style: oblique;
+  font-weight: normal;
+}
+
+.taviewer-menubar a:visited {
+  text-decoration: none;
+}
+
+.taviewer-controls {
+  display: flex;
+  flex-direction: column;
+}
+
+.taviewer-search-spacer {
+  flex: 1.2;
+}
+.taviewer-search {
+  display: flex;
+  flex-direction: row;
+}
+
+.taviewer-breadcrumbs {
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 13px;
+}
+
+.taviewer-breadcrumbs span::before {
+  content: " / ";
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.resp-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.resp-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+
+
+.taviewer-complete-tooltip  {
+  font-size:12px;
+}

@@ -1,0 +1,35 @@
+{
+  "name": "taviewer",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^3.1.0",
+    "git-hooks": "^1.1.9",
+    "history": "^4.7.2",
+    "i18next": "^11.3.3",
+    "i18next-browser-languagedetector": "^2.2.0",
+    "i18next-xhr-backend": "^1.5.1",
+    "lodash": "^4.17.4",
+    "query-string": "^5.0.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-i18next": "^7.7.0",
+    "react-image-lightbox": "^4.4.1",
+    "react-image-resizer": "^1.2.0",
+    "react-images": "^0.5.14",
+    "react-photo-gallery": "^6.0.22",
+    "react-responsive": "^4.1.0",
+    "react-scripts": "1.0.17",
+    "react-split-pane": "^0.1.77",
+    "trie-search": "https://github.com/mhalle/trie-search.git",
+    "wikidata-sdk": "^5.7.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build-test": "react-scripts build",
+    "build": "cp src/data/human.json src/data/human.min.json && minify-json src/data/human.min.json && react-scripts build && sed -i 's/\/static\//\/app\/taviewer\/static\//g' build/index.html",
+    "conzept-deploy": "rm -r /var/www/html/app/taviewer/ && cp -r build /var/www/html/app/taviewer",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

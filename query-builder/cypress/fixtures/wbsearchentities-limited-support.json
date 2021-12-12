@@ -1,0 +1,24 @@
+{
+  "searchinfo": {
+    "search": "LilyPond notation"
+  },
+  "search": [
+    {
+      "id": "P6883",
+      "title": "Property:P6883",
+      "pageid": 64462541,
+      "repository": "wikidata",
+      "url": "//www.wikidata.org/wiki/Property:P6883",
+      "datatype": "musical-notation",
+      "concepturi": "http://www.wikidata.org/entity/P6883",
+      "label": "LilyPond notation",
+      "description": "musical notation in LilyPond syntax",
+      "match": {
+        "type": "label",
+        "language": "en",
+        "text": "LilyPond notation"
+      }
+    }
+  ],
+  "success": 1
+}

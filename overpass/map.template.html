@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      http-equiv="content-type"
+      content="text/html; charset=utf-8"
+      lang="en"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <title>conzept overpass map</title>
+
+    <!-- conzept resources -->
+    CONZEPT_COMMON_HTML_INCLUDE
+
+  </head>
+
+  <body style="font-family: 'Quicksand', sans-serif !important;">
+
+    <span id="queryTitle"></span>
+    <a href="javascript:void(0)" id="fullscreenToggle" onclick="document.toggleFullscreen()" class="global-actions"><i id="fullscreenIcon" title="fullscreen toggle" class="fas fa-expand-arrows-alt"></i></a>
+
+    <!--map-->
+    <div id="map"></div>
+    <!--wait spinner-->
+    <div class="modal"></div>
+
+  <script>
+
+    $( document ).ready( function() {
+
+      window.language = getParameterByName('l') || 'en';
+
+      console.log( window.language );
+
+      let map_title = getParameterByName('t') || '';
+
+      $('#queryTitle').text( map_title );
+
+    });
+
+    document.toggleFullscreen = function() {
+
+      if (screenfull.enabled) {
+        screenfull.toggle();
+      }
+
+      return 0;
+
+    };
+
+  </script>
+
+  <style>
+
+    .leaflet-popup-content-wrapper {
+      border-radius: 1em;
+      font-size: 1.4em;
+    }
+
+  </style>
+
+  </body>
+
+</html>
