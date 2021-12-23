@@ -9,7 +9,7 @@
     "browser_test": "grunt browser_test",
     "build": "grunt build",
     "deploy": "grunt deploy",
-    "conzept-deploy": "cp build/default-config.json build/custom-config.json && rm -r /var/www/html/app/query && cp -r build /var/www/html/app/query && cp * /var/www/html/app/query && cp -r vendor wikibase node_modules i18n vendor polestar"
+    "conzept-deploy": "cp build/default-config.json build/custom-config.json && rm -r /var/www/html/app/query && cp -r build /var/www/html/app/query && cp * /var/www/html/app/query && cp -r vendor wikibase node_modules i18n polestar /var/www/html/app/query"
   },
   "repository": {
     "type": "git",
